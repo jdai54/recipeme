@@ -1,0 +1,4 @@
+<h1><%= @topic.title %></h1>
+<% @topic.bookmarks.each do |bookmark| %>
+  <%= link_to bookmark.url, bookmark %>
+<% end %>
