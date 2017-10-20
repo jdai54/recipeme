@@ -9,6 +9,7 @@
         <% topic.bookmarks.each do |bookmark| %>
           <%= link_to bookmark.url, bookmark %>
         <% end %>
+        <%= render 'bookmarks/form', bookmark: Bookmark.new %>
       </h4>
     </div>
   </div>
