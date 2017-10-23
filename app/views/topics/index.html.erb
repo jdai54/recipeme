@@ -4,12 +4,11 @@
     <div class="media-body">
       <h4 class="media-heading" id="bookmark-topic">
         <%= link_to topic.title, topic %>
-        <%= link_to "Edit", edit_topic_path(topic), class: 'btn btn-success' %>
-        <%= link_to "Delete", topic, method: :delete, class: 'btn btn-danger', remote: true %>
+        <%= link_to "", edit_topic_path(topic), class: 'glyphicon glyphicon-edit' %>
+        <%= link_to "", topic, method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
         <% topic.bookmarks.each do |bookmark| %>
-          <%= link_to bookmark.url, bookmark %>
+          <%= link_to bookmark.url, bookmark.url, :target => "_blank" %>
         <% end %>
-        <%= render 'bookmarks/form', bookmark: Bookmark.new %>
       </h4>
     </div>
   </div>

@@ -31,9 +31,6 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.destroy
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to root_path
   end
 end

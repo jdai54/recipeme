@@ -1,4 +1,7 @@
 <h1><%= @topic.title %></h1>
+<%= render 'bookmarks/form', bookmark: Bookmark.new, topic: @topic %>
 <% @topic.bookmarks.each do |bookmark| %>
-  <%= link_to bookmark.url, bookmark %>
+  <%= link_to bookmark.url, bookmark.url, :target => "_blank" %>
+  <%= link_to "", edit_topic_bookmark_path(bookmark.topic, bookmark), class: 'glyphicon glyphicon-edit' %>
+  <%= link_to "", [bookmark.topic, bookmark], method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
 <% end %>
