@@ -9,7 +9,7 @@ class IncomingController < ApplicationController
 
     @topic = Topic.find_by(title: params[:subject])
 
-    @url = params["body-plain"]
+    @url = params["stripped-text"]
 
     if @user.nil?
       @user = User.new(email: params[:sender], password: "123456")
