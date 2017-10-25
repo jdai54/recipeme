@@ -7,7 +7,7 @@ class IncomingController < ApplicationController
     # magic here.
     @user = User.find_by(email: params[:sender])
 
-    @topic = Topic.find_by(email: params[:subject])
+    @topic = Topic.find_by(title: params[:subject])
 
     @url = params["body-plain"]
 
