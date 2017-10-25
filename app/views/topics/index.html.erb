@@ -1,16 +1,22 @@
 <h1>All Bookmarks</h1>
 <% @topics.each do |topic| %>
-  <div class="media">
-    <div class="media-body">
+  <div class="row">
+    <div class="col-md-9">
       <h4 class="media-heading" id="bookmark-topic">
         <%= link_to topic.title, topic %>
         <%= link_to "", edit_topic_path(topic), class: 'glyphicon glyphicon-edit' %>
         <%= link_to "", topic, method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
-        <% topic.bookmarks.each do |bookmark| %>
-          <%= link_to bookmark.url, bookmark.url, :target => "_blank" %>
-        <% end %>
       </h4>
     </div>
   </div>
+  <% topic.bookmarks.each_slice(3) do |bookmarks| %>
+    <div class="row">
+      <% bookmarks.each do |bookmark| %>
+        <div class="col-md-3">
+          <%= link_to bookmark.url, bookmark.url, :target => "_blank" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
 <%= render 'topics/form', topic: Topic.new %>

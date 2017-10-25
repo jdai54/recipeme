@@ -21,6 +21,9 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'figaro', '1.0'
 gem 'devise'
+gem 'embedly', '~> 1.9', '>= 1.9.1'
+gem 'querystring', '~> 0.1.0'
+gem 'json'
 
 group :development, :test do
   gem 'byebug'
