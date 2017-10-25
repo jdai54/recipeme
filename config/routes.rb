@@ -7,6 +7,7 @@ resources :topics do
 
   get 'about' => 'welcome#about'
   get 'welcome/index'
+  post :incoming, to: 'incoming#create'
 
   root 'topics#index'
 end
