@@ -4,12 +4,8 @@
     <div class="col-md-9">
       <h4 class="media-heading" id="bookmark-topic">
         <%= link_to topic.title, topic %>
-        <% if policy(topic).edit? %>
-          <%= link_to "", edit_topic_path(topic), class: 'glyphicon glyphicon-edit' %>
-        <% end %>
-        <% if policy(topic).destroy? %>
-          <%= link_to "", topic, method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
-        <% end %>
+        <%= link_to "", edit_topic_path(topic), class: 'glyphicon glyphicon-edit' %>
+        <%= link_to "", topic, method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
       </h4>
     </div>
   </div>

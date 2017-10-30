@@ -14,6 +14,7 @@ class TopicsController < ApplicationController
     @topic = Topic.new
     authorize @topic
     @topic.title = params[:topic][:title]
+    @topic.user = current_user
 
     @topic.save
     redirect_to root_path
@@ -25,17 +26,21 @@ class TopicsController < ApplicationController
   end
 
   def update
-    authorize @topic
     @topic = Topic.find(params[:id])
+    authorize @topic
     @topic.title = params[:topic][:title]
-
-    @topic.save
-    redirect_to root_path
+    if @topic.save
+      flash.now[:notice] = "Your bookmark was saved."
+      redirect_to root_path
+    else
+      flash.now[:alert] = "You cannot edit a bookmark created by someone else."
+      redirect_to root_path
+    end
   end
 
   def destroy
-    authorize @topic
     @topic = Topic.find(params[:id])
+    authorize @topic
     @topic.destroy
 
     redirect_to root_path

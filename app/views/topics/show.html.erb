@@ -2,10 +2,6 @@
 <%= render 'bookmarks/form', bookmark: Bookmark.new, topic: @topic %>
 <% @topic.bookmarks.each do |bookmark| %>
   <%= link_to bookmark.url, bookmark.url, :target => "_blank" %>
-  <% if policy(bookmark).edit? %>
-    <%= link_to "", edit_topic_bookmark_path(bookmark.topic, bookmark), class: 'glyphicon glyphicon-edit' %>
-    <% end %>
-  <% if policy(bookmark).destroy? %>
-    <%= link_to "", [bookmark.topic, bookmark], method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
-  <% end %>
+  <%= link_to "", edit_topic_bookmark_path(bookmark.topic, bookmark), class: 'glyphicon glyphicon-edit' %>
+  <%= link_to "", [bookmark.topic, bookmark], method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
 <% end %>
