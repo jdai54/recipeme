@@ -4,7 +4,6 @@ class BookmarksController < ApplicationController
   before_action :set_topic, only: [:new, :create, :update, :destroy]
 
   def new
-    @topic = Topic.find(params[:topic_id])
     authorize @bookmark
     @bookmark = Bookmark.new
   end
@@ -22,13 +21,10 @@ class BookmarksController < ApplicationController
   end
 
   def edit
-    @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
   end
 
   def update
-    @bookmark = Bookmark.find(params[:id])
-    @topic = Topic.find(params[:topic_id])
     @bookmark.url = params[:bookmark][:url]
     authorize @bookmark
     if @bookmark.update(bookmark_params)
@@ -40,7 +36,6 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     @bookmark.destroy
     redirect_to root_path
