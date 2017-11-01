@@ -7,6 +7,7 @@ RSpec.describe Bookmark, type: :model do
 
   it { is_expected.to belong_to(:user) }
   it { is_expected.to belong_to(:topic) }
+  it { is_expected.to have_many(:like) }
 
   describe "attributes" do
     it "has url and user attributes" do
