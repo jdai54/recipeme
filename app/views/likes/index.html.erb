@@ -1,2 +1,4 @@
-<h1>Likes#index</h1>
-<p>Find me in app/views/likes/index.html.erb</p>
+<h1>All the Bookmarks you like!</h1>
+ <% @likes.each do |like| %>
+   <%= link_to like.bookmark.url, like.bookmark.url %>
+ <% end %>

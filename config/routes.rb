@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'likes/index'
+  resources :likes, only: :index
 
   resources :topics do
     resources :bookmarks, except: [:index]
