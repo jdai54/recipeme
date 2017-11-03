@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :likes, only: :index
+  get 'users/show'
 
+  resources :likes, only: :index
+  resources :users, only: [:show]
   resources :topics do
     resources :bookmarks, except: [:index]
   end
