@@ -1,0 +1,11 @@
+<h1>My RecipeMe</h1>
+<h3>My Bookmarks</h3>
+<% @user_bookmarks.each do |bookmark| %>
+  <%= link_to bookmark.url, bookmark.url %>
+  <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+<% end %>
+<h3>My Favorites</h3>
+<% @liked_bookmarks.each do |like| %>
+  <%= link_to like.bookmark.url, like.bookmark.url %>
+  <%= render partial: 'likes/like', locals: { bookmark: like.bookmark } %>
+<% end %>
