@@ -3,6 +3,8 @@
 <% @user_bookmarks.each do |bookmark| %>
   <%= link_to bookmark.url, bookmark.url %>
   <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
+  <% @object = LinkThumbnailer.generate(bookmark.url) %>
+  <%= image_tag @object.images.first.src.to_s, class: 'img-thumbnail' %>
 <% end %>
 <h3>My Favorites</h3>
 <% @liked_bookmarks.each do |like| %>
