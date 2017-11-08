@@ -15,3 +15,171 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 25px;
+}
+
+#bookmark-topic {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.url-title {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
+
+.url-preview {
+  width: 150px;
+  height: 115px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+img {
+  background: #3A6F9A;
+  vertical-align: middle;
+  max-height: 115px;
+  max-width: 150px;
+}
+
+.img-thumbnail {
+    border: 0 none;
+    box-shadow: none;
+}
+
+.bookmark-row {
+  padding-bottom: 10px;
+}
+
+.topic-form {
+  background-color: #C0C0C0;
+  padding: 20px;
+}
+
+.topic-input {
+  width: 100%
+}
+
+.submit {
+  width: 57px;
+  height: 34px
+}
+
+.glyphicon {
+  font-size: 16px;
+}
+
+.background {
+  height: 100%;
+  background-color: #26466D;
+}
+
+.jumbotron {
+  text-align: center;
+  border: 1px solid black;
+  height: 100%;
+  background-color: #B7C3D0;
+}
+
+// img {
+//   max-height: 30px;
+//   max-height: 30px;
+// }
+
+
+
+.styled-font {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.field {
+  padding: 7px;
+}
+
+.nav {
+  padding-right: 15px;
+  background-color: #C0C0C0;
+  border: none;
+  color: white;
+  width: 100%;
+}
+
+.nav a {
+  color: #696969;
+}
+
+.user-info {
+  margin-top: 9px;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  table {
+    width: 730px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border-collapse: separate;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid lightgrey;
+  font-size: 16px;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px;
+}
+
+tr:hover {background-color: #f5f5f5}
+
+.list-background {
+  height: 100%;
+  background-color: #B7C3D0;
+}
+
+.todolist {
+  background-color: white;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.todolist h1 {
+  text-align: center;
+}

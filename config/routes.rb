@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
   get 'users/show'
 
   resources :likes, only: :index
-  resources :users, only: [:show]
+  resources :users
   resources :topics do
     resources :bookmarks, except: [:index]
   end
@@ -10,8 +12,6 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [] do
     resources :likes, only: [:index, :create, :destroy]
   end
-
-  devise_for :users
 
   get 'about' => 'welcome#about'
   get 'welcome/index'

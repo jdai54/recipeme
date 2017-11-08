@@ -2,6 +2,8 @@
 <%= render 'bookmarks/form', bookmark: Bookmark.new, topic: @topic %>
 <% @topic.bookmarks.each do |bookmark| %>
   <%= link_to bookmark.url, bookmark.url, :target => "_blank" %>
+  <% @object = LinkThumbnailer.generate(bookmark.url) %>
+  <%= image_tag @object.images.first.src.to_s, class: 'img-thumbnail' %>
   <%= link_to "", edit_topic_bookmark_path(bookmark.topic, bookmark), class: 'glyphicon glyphicon-edit' %>
   <%= link_to "", [bookmark.topic, bookmark], method: :delete, class: 'glyphicon glyphicon-trash', id: 'trash' %>
   <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
